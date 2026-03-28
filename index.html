@@ -1,0 +1,211 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>What's in my bag</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+
+<style>
+body {
+    background: #B31F00;
+    color: black;
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* SAC */
+#bag {
+    width: 200px;
+    margin: 50px auto;
+}
+
+#bag img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* OBJETS */
+#objects {
+    margin-top: 20px;
+}
+
+.object {
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.object img {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.object img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* TEXTE */
+#description {
+    margin-top: 20px;
+    font-size: 18px;
+    min-height: 60px;
+    padding: 0 20px;
+}
+
+/* BOUTONS */
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background: #FFABE6;
+    border: none;
+    color: black;
+    border-radius: 25px;
+    box-shadow: 0 5px 0 #d98cc0;
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #d98cc0;
+}
+
+/* TEXTE FINAL */
+#finalText {
+    display: none;
+    font-size: 42px;
+    margin-top: 40px;
+    color: #FFABE6;
+    text-shadow: 2px 2px 0 black;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="bag">
+    <img src="bag.jpeg" alt="sac">
+</div>
+
+<button id="mainBtn">what's in my bag 💖</button>
+
+<div id="objects"></div>
+
+<div id="description"></div>
+
+<button id="finalBtn" style="display:none;">un petit mot pour toi 💌</button>
+
+<div id="finalText">Coucou mon bébé Ange, j'espère que en cette matinée bien chargée de ton côté, tu te porte bien, et qu'aucune frustration ne vient combler ton esprit. Je t'écris ces mots pour te souhaiter nos joyeux 11 mois. Je suis content et heureux qu'on soit ensemble. Ça fait tellement du bien, tu es la femme de ma vie, je sais, je n'aime pas dire le mot femme dans ce sens là, mais c'est la réalité, tu es la conjointe de ma vie, mon âme sœur. Dans trois mois on est enfin ensemble, sans aucun problème, plus aucune contrainte, rien. Je te promets de faire toujours de mon mieux, toujours t'aimer au maximum (Bon je t'aimerai toujours au maximum, j'ai même pas besoin de te le promettre parce que je t'aime tellemennnnnt (et tellement plus que toi 😛)) je n'arrêterai jamais de faire des efforts, je souhaite être parfait pour toi, tu est mon soleil tout entier, mon petit renard polaire qui, en se réchauffant près de moi, devient un renard forestier. Mon petit golden à moi si je puis dire.
+
+Meu pequeno coração, durante esses 11 meses, estive longe de ser perfeito. Muitos problemas apareceram no nosso caminho, mas sempre conseguimos superá-los juntos. E se tivermos que enfrentar alguma prova, eu sempre vou querer dar o meu melhor. Desde o primeiro dia em que nos conhecemos, você me acolheu de braços abertos, com amor nas suas palavras. Fico feliz por ter conseguido conquistar a sua confiança, e feliz por tentar te ajudar a confiar mais em si mesma, você é perfeita. Perfeita… é uma das muitas palavras que me vêm à mente quando penso em você. Você é radiante como o sol, você é o sol. Meu pequeno sol.
+
+Et ce sont sur ces derniers mots que je te laisse admirer ce site pas si réussi. Dans un mois ça fera un an que nous sommes ensemble, puis ensuite, nous enchaîneront les années, jusqu'à arriver à des décennies.
+Je t'aime tellement mon bébé Renard, joyeux 11 mois. 
+Ton amoureux, Aaron.
+</div>
+
+<script>
+
+const items = [
+    {
+        img: "book.jpeg",
+        name: "Ton livre",
+        desc: "Alala qui serais tu sans un livre avec toi, que ce soit un livre personnel, ou bien un du prix azur, tu sera toujours accompagné d'un livre, d'un carnet ou d'une note. Sur celle-ci, tu pourras noter toutes nos aventures, ainsi que relever tout mon amour pour toi."
+    },
+    {
+        img: "gaucho.jpeg",
+        name: "ANTIFA !!!",
+        desc: "Et hop un pims ANTIFA dans ton sac, quelle gaucho serait tu sans lui ? Tu l'a toujours avec toi pour pouvoir dire « AH OUI !? ANTI FAH !!! » (pardon…) grâce à toi j'ai pu m'intéresser un peu plus à la politique. Et je te remercie car grâce à ça on peut hate encore plus à deux mouehehehe."
+    },
+    {
+        img: "lipstick.jpeg",
+        name: "Ton rouge à lèvre",
+        desc: "Alors je sais pas comment il fait pour être encore plein après tout les bisous qu'on se fait mais il est encore là, grâce à lui tu laisse ta trace sur moi, dans mon cou, sur mes joues ou sur mon front, mange moi autant que tu le souhaite avec."
+    },
+    {
+        img: "phone.jpeg",
+        name: "Ton téléphone",
+        desc: "DRING ! DRING ! C'EST TON COPAIN QUI T'APPELLE !!!!! Et je n'arrêterais jamais de t'appeler Meu Anjinho, je t'appelerais peu importe le temps qu'il fait, et peu importe le lieu, si je peut entendre ta voix."
+    },
+    {
+        img: "veuve.jpeg",
+        name: "Ta teinture",
+        desc: "HAHAHHAH imagine tu aurais toujours ta teinture dans ton sac, toi, mon amour, qui a peur de ces racines que j'adore énormément, le fait que quand on est ensemble, tu te fiche complètement de mon regard sur ces racines montre ta confiance en moi, sache que j'adore chaque aspects de toi, autant mental que physique. Je t'aime mon Ange."
+    },
+    {
+        img: "heart.jpeg",
+        name: "Mon cœur",
+        desc: "AH BAH LE VOICI LUI !!!! J'espère que tu en prend soin hein !?!?!?!? Je te confie jusqu'à…. Attend je compte…. TOUT LE TEMPS AAAAAA !!!! Mon coeur t'appartient pour l'éternité, moi y compris, je t'appartient mon Ange."
+    },
+    {
+        img: "key.jpeg",
+        name: "La clé de mon cœur",
+        desc: "OH ! bah tiens tu a la clé pour y accéder, mais celle là n'est que dans notre imagination car tu n'en a pas besoin, tu est à jamais en mon cœur désormais. Je te protège et te chérie dans celui ci, Je t'aime."
+    },
+    {
+        img: "wallet.jpeg",
+        name: "Ton porte-monnaie",
+        desc: "#thebestgirlfriendever qui a toujours une photo de nous dans son porte-monnaie, si je l'ai mis ici aussi c'est pour encore une fois m'excuser de toutes les dépenses que tu fait pour nous, j'ai hâte de pouvoir te rembourser, et qu'on soit quite la dessus."
+    },
+    {
+        img: "polaroid.jpeg",
+        name: "Notre photo",
+        desc: "j'ai voulu rajouter une photo de nous, comme ça, tu pourras contempler nos beaux souvenirs ensemble qui sont parfois chaotique, certes, mais qui sont les plus beaux souvenirs de ma vie j'ai hâte que ces souvenirs se transforme en vie quotidienne à tes côtés. Je t'aime mon ange."
+    },
+    {
+        img: "sniffou.jpeg",
+        name: "Sniffou",
+        desc: "Oh ! Je crois qu'il dort, essayons de ne pas faire de bruit pour ne pas le réveiller. Notre premier enfant, qu'est-ce qu'il grandit vite quand même, il a été la depuis le début, et restera avec nous jusqu'à la fin, qui n'arrivera donc jamais louehehehe, je vous garde tous avec moi, près de moi."
+    }
+];
+
+let index = 0;
+
+const mainBtn = document.getElementById("mainBtn");
+const objectsDiv = document.getElementById("objects");
+const desc = document.getElementById("description");
+const finalBtn = document.getElementById("finalBtn");
+const finalText = document.getElementById("finalText");
+
+mainBtn.onclick = () => {
+    if (index < items.length) {
+
+        const currentItem = items[index];
+
+        let obj = document.createElement("div");
+        obj.className = "object";
+
+        let img = document.createElement("img");
+        img.src = currentItem.img;
+
+        img.onclick = () => {
+            desc.innerText = currentItem.name + " : " + currentItem.desc;
+        };
+
+        obj.appendChild(img);
+        objectsDiv.appendChild(obj);
+
+        index++;
+
+    } else {
+        objectsDiv.innerHTML = "";
+        desc.innerText = "";
+        index = 0;
+        finalBtn.style.display = "inline-block";
+    }
+};
+
+finalBtn.onclick = () => {
+    finalText.style.display = "block";
+};
+
+</script>
+
+</body>
+</html>
